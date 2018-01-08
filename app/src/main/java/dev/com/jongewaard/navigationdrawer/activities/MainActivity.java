@@ -56,6 +56,19 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new InfoFragment();
                         fragmentTransaction = true;
                         break;
+                    case R.id.menu_opcion_1:
+
+                        break;
+                    case R.id.menu_opcion_2:
+
+                        break;
+                    case R.id.menu_opcion_3:
+
+                        break;
+
+
+
+
                 }
 
                 if(fragmentTransaction){
