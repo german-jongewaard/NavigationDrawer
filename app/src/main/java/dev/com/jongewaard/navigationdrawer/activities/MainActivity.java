@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import dev.com.jongewaard.navigationdrawer.R;
 import dev.com.jongewaard.navigationdrawer.fragments.AlertsFragment;
@@ -57,13 +58,13 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction = true;
                         break;
                     case R.id.menu_opcion_1:
-
+                        Toast.makeText(getApplicationContext(), "Has cloqueado en la opcion 1", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.menu_opcion_2:
-
+                        Toast.makeText(getApplicationContext(), "Has cloqueado en la opcion 2", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.menu_opcion_3:
-
+                        Toast.makeText(getApplicationContext(), "Has cloqueado en la opcion 3", Toast.LENGTH_SHORT).show();
                         break;
 
 
