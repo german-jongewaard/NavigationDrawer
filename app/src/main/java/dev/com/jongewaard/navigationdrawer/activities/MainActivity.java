@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navview);
 
+        setFragmentByDefault();
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -100,6 +102,17 @@ public class MainActivity extends AppCompatActivity {
         //habilita un icono en la barra al lado del nombre
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_home);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    private void setFragmentByDefault(){
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_frame, new EmailFragment())
+                .commit();
+
+        navigationView.getMenu().getItem(0).setChecked(true);
+
     }
 
     @Override
