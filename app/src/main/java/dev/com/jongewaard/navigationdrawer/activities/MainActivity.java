@@ -75,15 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(fragmentTransaction){
-
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.content_frame, fragment)
-                            .commit();
-                //Muestra que esta activo, que se hizo el check!
-                    item.setChecked(true);
-                //aqui obtengo el titulo
-                    getSupportActionBar().setTitle(item.getTitle());
+                    //el método lo hice mas abajo.
+                    changeFragment(fragment, item);
                 //cierra el drawer Layout
                     drawerLayout.closeDrawers();
 
@@ -113,8 +106,21 @@ public class MainActivity extends AppCompatActivity {
 
         MenuItem item = navigationView.getMenu().getItem(0).setChecked(true);
         getSupportActionBar().setTitle(item.getTitle());
+    }
+
+    private void changeFragment(Fragment fragment, MenuItem item){
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_frame, fragment)
+                .commit();
+        //Muestra que esta activo, que se hizo el check!
+        item.setChecked(true);
+        //aqui obtengo el titulo
+        getSupportActionBar().setTitle(item.getTitle());
+
 
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
