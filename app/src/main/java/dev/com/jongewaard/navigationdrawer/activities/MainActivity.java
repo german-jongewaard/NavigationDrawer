@@ -111,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.content_frame, new EmailFragment())
                 .commit();
 
-        navigationView.getMenu().getItem(0).setChecked(true);
+        MenuItem item = navigationView.getMenu().getItem(0).setChecked(true);
+        getSupportActionBar().setTitle(item.getTitle());
 
     }
 
