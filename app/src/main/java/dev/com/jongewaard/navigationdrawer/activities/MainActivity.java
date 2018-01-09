@@ -99,16 +99,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setFragmentByDefault(){
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.content_frame, new EmailFragment())
-                .commit();
-
-        MenuItem item = navigationView.getMenu().getItem(0).setChecked(true);
-        getSupportActionBar().setTitle(item.getTitle());
+        changeFragment(new EmailFragment(), navigationView.getMenu().getItem(0));
     }
 
     private void changeFragment(Fragment fragment, MenuItem item){
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.content_frame, fragment)
@@ -118,9 +113,7 @@ public class MainActivity extends AppCompatActivity {
         //aqui obtengo el titulo
         getSupportActionBar().setTitle(item.getTitle());
 
-
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
